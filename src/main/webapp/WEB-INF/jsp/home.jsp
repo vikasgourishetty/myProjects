@@ -5,8 +5,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="public/lib/bootstrap-3.3.7/css/bootstrap.min.css">
+
 </head>
 <body>
 	HELLO WORLD
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script src="public/lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
