@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +53,7 @@
 		        <button type="submit" class="btn btn-default">Submit</button>
 		      </form>
 		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href=<c:url value="/signup"/> >Sign Up <span class="glyphicon glyphicon-list-alt"></span></a></li>
+		        <li><a href=<c:url value="/signup"/> > <span class="glyphicon glyphicon-list-alt"></span> Sign Up</a></li>
 		        <li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
 		          <ul class="dropdown-menu">
