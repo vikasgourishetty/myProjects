@@ -9,12 +9,12 @@ import org.hibernate.validator.constraints.Email;
 public class SignUpForm {
 	@NotNull
 	@Size(min=1, max=255)
-	//@Pattern(regexp="[a-zA-Z0-9._%-+]+@([a-zA-Z0-9-.]+\\.([a-zA-Z]{2,5}")
-	@Email
+	@Pattern(regexp="[0-9]*")
+	//@Email
 	String email;
 	
 	@NotNull
-	@Size(min=1, max=100)
+	@Size(min=1, max=100, message = "{nameSizeError}")
 	String name;
 	
 	@NotNull
