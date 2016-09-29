@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Vikas's Spring Boot Play ground</title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="public/lib/bootstrap-3.3.7/css/bootstrap.min.css">
@@ -52,7 +52,7 @@
 		        <button type="submit" class="btn btn-default">Submit</button>
 		      </form>
 		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href="#">Link</a></li>
+		        <li><a href=<c:url value="/signup"/> >Sign Up <span class="glyphicon glyphicon-list-alt"></span></a></li>
 		        <li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
 		          <ul class="dropdown-menu">
