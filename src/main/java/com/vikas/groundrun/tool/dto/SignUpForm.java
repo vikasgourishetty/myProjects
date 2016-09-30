@@ -1,8 +1,24 @@
 package com.vikas.groundrun.tool.dto;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+
 public class SignUpForm {
+	@NotNull
+	@Size(min=1, max=255)
+	@Pattern(regexp="[0-9]*")
+	//@Email
 	String email;
+	
+	@NotNull
+	@Size(min=1, max=100, message = "{nameSizeError}")
 	String name;
+	
+	@NotNull
+	@Size(min=6, max=15)
 	String password;
 	
 	public String getEmail() {

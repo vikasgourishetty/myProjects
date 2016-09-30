@@ -1,9 +1,12 @@
 package com.vikas.groundrun.tool.controller;
 
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,7 +26,11 @@ public class RootController {
 	}
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
-	public String signUp(@ModelAttribute("signupform") SignUpForm signUpForm){
+	public String signUp(@ModelAttribute("signUpForm") @Valid SignUpForm signUpForm,
+			BindingResult result){
+		
+		if (result.hasErrors())
+			return "signup";
 		
 		logger.info(signUpForm.toString());
 		return "redirect:/";

@@ -11,6 +11,8 @@
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="public/lib/bootstrap-3.3.7/css/bootstrap.min.css">
 
+<link rel="stylesheet" href="public/css/styles.css">
+
 </head>
 <body>
 	<div class="container">
