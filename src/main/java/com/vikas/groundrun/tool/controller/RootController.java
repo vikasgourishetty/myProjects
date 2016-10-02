@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.vikas.groundrun.tool.dto.SignUpForm;
 import com.vikas.groundrun.tool.services.UserService;
@@ -35,12 +36,15 @@ public class RootController {
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public String signUp(@ModelAttribute("signUpForm") @Valid SignUpForm signUpForm,
-			BindingResult result){
+			BindingResult result, RedirectAttributes redirectAttributes){
 		
 		if (result.hasErrors())
 			return "signup";
 		
 		userService.signUp(signUpForm);
+		
+		redirectAttributes.addFlashAttribute("flashkind", "success");
+		redirectAttributes.addFlashAttribute("flashMessage", "Sign up Success.");
 		
 		//logger.info(signUpForm.toString());
 		return "redirect:/";
