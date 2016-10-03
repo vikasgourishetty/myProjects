@@ -16,6 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.vikas.groundrun.tool.dto.SignUpForm;
 import com.vikas.groundrun.tool.services.UserService;
+import com.vikas.groundrun.tool.util.MyUtil;
 
 @Controller
 public class RootController {
@@ -43,8 +44,7 @@ public class RootController {
 		
 		userService.signUp(signUpForm);
 		
-		redirectAttributes.addFlashAttribute("flashkind", "success");
-		redirectAttributes.addFlashAttribute("flashMessage", "Sign up Success.");
+		MyUtil.flash(redirectAttributes, "success", "signupSuccess");
 		
 		//logger.info(signUpForm.toString());
 		return "redirect:/";
