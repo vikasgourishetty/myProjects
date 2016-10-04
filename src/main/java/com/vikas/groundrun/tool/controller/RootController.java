@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,16 +19,24 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.vikas.groundrun.tool.dto.SignUpForm;
 import com.vikas.groundrun.tool.services.UserService;
 import com.vikas.groundrun.tool.util.MyUtil;
+import com.vikas.groundrun.tool.validators.SignUpFormValidator;
 
 @Controller
 public class RootController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(RootController.class);
 	private UserService userService;
+	private SignUpFormValidator signUpFormValidator;
 	
 	@Autowired
-	public RootController(UserService userService) {
+	public RootController(UserService userService, SignUpFormValidator signUpFormValidator) {
 		this.userService = userService;
+		this.signUpFormValidator = signUpFormValidator;
+	}
+	
+	@InitBinder("signUpForm")
+	protected void initSignUpBinder(WebDataBinder binder) {
+		binder.setValidator(signUpFormValidator);
 	}
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
