@@ -70,3 +70,11 @@
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
+		
+		<c:if test="${not empty flashMessage}">
+			<div class="alert alert-${flashkind} alert-dismissable">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				${flashMessage}
+			</div>
+		</c:if>
+		
